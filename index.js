@@ -3,8 +3,11 @@ const path = require("path");
 
 const time = new Date().toLocaleString();
 const today = new Date();
-const current = `Date ${today.getDay()}-${today.getMonth()}-${today.getFullYear()}, Time ${today.getHours()}-${today.getMinutes()}-${today.getSeconds()}`;
-
+console.log(today);
+const current = `Date ${today.getDate()}-${
+  today.getMonth() + 1
+}-${today.getFullYear()}, Time ${today.getHours()}-${today.getMinutes()}-${today.getSeconds()}`;
+console.log(current);
 fs.writeFile(`./${current}.txt`, time, (err) => {
   if (err) {
     console.log(Error);
